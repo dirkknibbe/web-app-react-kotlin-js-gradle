@@ -18,6 +18,7 @@ val VideoPlayer = FC<VideoPlayerProps> { props ->
             position = Position.absolute
             top = 10.px
             right = 10.px
+            fontFamily = FontFamily.sansSerif
         }
         h3 {
             +"${props.video.speaker}: ${props.video.title}"
@@ -25,8 +26,15 @@ val VideoPlayer = FC<VideoPlayerProps> { props ->
         button {
             css {
                 display = Display.block
-                backgroundColor = if (props.unwatchedVideo) NamedColor.lightskyblue else NamedColor.darkblue
+                backgroundColor = if (props.unwatchedVideo) NamedColor.lightskyblue else NamedColor.lightpink
                 color = NamedColor.white
+                border = None.none
+                padding = 1.rem
+                borderRadius = 2.rem
+                marginBottom = 1.rem
+                hover {
+                    color = NamedColor.black
+                }
             }
             onClick = {
                 props.onWatchedButtonPressed(props.video)
@@ -43,6 +51,7 @@ val VideoPlayer = FC<VideoPlayerProps> { props ->
                 position = Position.absolute
                 top = 10.px
                 right = 10.px
+
             }
             EmailShareButton {
                 url = props.video.videoUrl

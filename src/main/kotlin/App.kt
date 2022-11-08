@@ -1,3 +1,5 @@
+import csstype.FontFamily
+import csstype.NamedColor
 import kotlinx.coroutines.async
 import react.*
 import react.dom.*
@@ -45,7 +47,13 @@ val App = FC<Props> {
     }
     // . . .
     div {
+        css {
+            fontFamily = FontFamily.sansSerif
+        }
         h3 {
+            css {
+                fontSize = 20.px
+            }
             +"Videos to watch"
         }
         VideoList {
@@ -56,6 +64,9 @@ val App = FC<Props> {
             }
         }
         h3 {
+            css {
+                fontSize = 20.px
+            }
             +"Videos watched"
         }
         VideoList {
