@@ -40,5 +40,9 @@ val App = FC<Props> {
             }
         }
     }
-// . . .
+    currentVideo?.let { curr ->
+        VideoPlayer {
+            video = curr
+        }
+    }
 }
