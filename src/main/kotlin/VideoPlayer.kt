@@ -25,7 +25,7 @@ val VideoPlayer = FC<VideoPlayerProps> { props ->
         button {
             css {
                 display = Display.block
-                backgroundColor = if (props.unwatchedVideo) NamedColor.lightgreen else NamedColor.purple
+                backgroundColor = if (props.unwatchedVideo) NamedColor.lightskyblue else NamedColor.darkblue
                 color = NamedColor.white
             }
             onClick = {
@@ -37,8 +37,9 @@ val VideoPlayer = FC<VideoPlayerProps> { props ->
                 +"Mark as unwatched"
             }
         }
-        img {
-            src = "https://via.placeholder.com/640x360.png?text=Video+Player+Placeholder"
+        ReactPlayer {
+            url = props.video.videoUrl
+            controls = true
         }
     }
 }
